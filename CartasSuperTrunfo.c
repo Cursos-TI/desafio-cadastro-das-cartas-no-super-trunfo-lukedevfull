@@ -1,22 +1,88 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
+#include <stdio.h>
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+  // declare variables
+  char cardId[50];
+  char states[50];
+  char code[50];
+  char city[50];
+  int population;
+  float area;
+  float pib;  
+  int numberOfTuristcPoints;
+  
+  // Get user-1 input
+  printf("Enter the card id: \n");
+  scanf("%s", cardId);
+  
+  printf("Enter the state: \n");
+  scanf("%s", states);
+  
+  printf("Enter the card code: \n");
+  scanf("%s", code);
+  
+  printf("Enter the city: \n");
+  scanf("%s", city);
+  
+  printf("Enter the population: \n");
+  scanf("%d", &population);
+  
+  printf("Enter the area(KM): \n");
+  scanf("%f", &area);
+  
+  printf("Enter the PIB: \n");
+  scanf("%f", &pib);
+  
+  printf("Enter the number of tourist points in the city: \n");
+  scanf("%d", &numberOfTuristcPoints);
+  
+  // Print the results
+  printf("Card code: %s\n", code);
+  printf("The state: %s\n", states);
+  printf("City: %s\n", city);
+  printf("Population: %d\n", population);
+  printf("Area: %.2f\n", area);
+  printf("PIB: %.2f\n", pib);
+  printf("Number of tourist points: %d\n", numberOfTuristcPoints);
+  
+  // Get user-2 input
+  printf("Enter the card id: \n");
+  scanf("%s", cardId);
+  
+  printf("Enter the state: \n");
+  scanf("%s", states);
+  
+  printf("Enter the card code: \n");
+  scanf("%s", code);
+  
+  printf("Enter the city: \n");
+  scanf("%s", city);
+  
+  printf("Enter the population: \n");
+  scanf("%d", &population);
+  
+  printf("Enter the area(KM): \n");
+  scanf("%f", &area);
+  
+  printf("Enter the PIB: \n");
+  scanf("%f", &pib);
+  
+  printf("Enter the number of tourist points in the city: \n");
+  scanf("%d", &numberOfTuristcPoints);
+  
+  
+  // Print the results -2
+  printf("The card id: %s\n", cardId);
+  printf("The state: %s\n", states);
+  printf("Card code: %s\n", code);
+  printf("City: %s\n", city);
+  printf("Population: %d\n", population);
+  printf("Area: %.2f\n", area);
+  printf("PIB: %.2f\n", pib);
+  printf("Number of tourist points: %d\n", numberOfTuristcPoints);
 
-    return 0;
+  return 0;
+}
+
 }
