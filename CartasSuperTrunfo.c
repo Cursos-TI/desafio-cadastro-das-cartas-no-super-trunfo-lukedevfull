@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 int main() {
-  // declare variables
+  // declare global variables
   char cardId[50];
   char states[50];
   char code[50];
