@@ -8,6 +8,8 @@ char city[50];
 int population;
 float area;
 float pib;  
+float pibPerCapita;
+float popDensity;
 int numberOfTuristcPoints;
 
 // Declaração das funções !!(fora da main)!!
@@ -29,9 +31,13 @@ void getCardDataInput() {
     
     printf("Enter the area(KM): \n");
     scanf("%f", &area);
+
+    popDensity = (float)population / area;
     
     printf("Enter the PIB: \n");
     scanf("%f", &pib);
+
+    pibPerCapita = (float)pib / population;
     
     printf("Enter the number of tourist points in the city: \n");
     scanf("%d", &numberOfTuristcPoints);
@@ -44,7 +50,9 @@ void printCardData() {
     printf("City: %s\n", city);
     printf("Population: %d\n", population);
     printf("Area: %.2f\n", area);
+    printf("Population density: %.2f hab/KM2\n", popDensity);
     printf("PIB: %.2f\n", pib);
+    printf("PIB per capita: $ %.2f\n", pibPerCapita);
     printf("Number of tourist points: %d\n", numberOfTuristcPoints);
 }
 
