@@ -1,23 +1,22 @@
-
 #include <stdio.h>
 
-// Declaração das variáveis globais para armazenar os dados da carta
-char cardId[50];          // ID da carta (máximo 49 caracteres)
-char states[50];          // Sigla do estado (UF)
-char code[50];            // Código da carta
-char city[50];            // Nome da cidade
-int population;           // População da cidade
-double area;              // Área em KM²
-double pib;               // Produto Interno Bruto
-float pibPerCapita;       // PIB per capita (calculado)
-float popDensity;         // Densidade populacional (calculada)
-int numberOfTuristcPoints;// Número de pontos turísticos
-double cardPower;         // Poder calculado da carta
+// Declaração das variáveis globais 
+char cardId[50];
+char states[50];
+char code[50];
+char city[50];
+int population;
+double area;
+double pib;  
+float pibPerCapita;
+float popDensity;
+int numberOfTuristcPoints;
+double cardPower;
 
-// Função para coletar dados da carta via entrada do usuário
+// Declaração das funções !!(fora da main)!!
 void getCardData() {
   printf("Enter the card id: \n");
-  scanf("%49s", cardId); // Limita a 49 caracteres para evitar estouro de buffer
+  scanf("%49s", cardId); // Limita a 49 caracteres para evitar !!overflow
   
   printf("Enter the state: \n");
   scanf("%49s", states);
@@ -34,19 +33,16 @@ void getCardData() {
   printf("Enter the area(KM): \n");
   scanf("%lf", &area);
   
-  // Calcula densidade populacional (população/área)
   popDensity = (float)population / area;
   
   printf("Enter the PIB: \n");
   scanf("%lf", &pib);
   
-  // Calcula PIB per capita (PIB/população)
   pibPerCapita = (float)pib / population;
   
   printf("Enter the number of tourist points in the city: \n");
   scanf("%d", &numberOfTuristcPoints);
   
-  // Fórmula complexa para cálculo do poder da carta
   cardPower = ((int)( 1 / popDensity) - 
   ((int)(pibPerCapita +
     numberOfTuristcPoints +
@@ -57,7 +53,6 @@ void getCardData() {
   ));
 }
 
-// Função para exibir todos os dados da carta formatados
 void printCardData() {
   printf("\nThe card id: %s\n", cardId);
   printf("The state: %s\n", states);
@@ -72,41 +67,54 @@ void printCardData() {
   printf("The card power is: %.2d\n", cardPower);
 }
 
-// Função principal
+
 int main() {
-  // Variáveis para armazenar dados da Carta 1
+  // Variáveis para a Carta 1
   unsigned long int pop1;
   double area1, pib1;
   int pontos1;
   float densidade1, pibPerCapita1, superPoder1;
   
-  // Variáveis para armazenar dados da Carta 2
+  // Variáveis para a Carta 2
   unsigned long int pop2;
   double area2, pib2;
   int pontos2;
   float densidade2, pibPerCapita2, superPoder2;
 
-  // Coleta e armazena dados da primeira carta
-  getCardData();
-  pop1 = population;
-  area1 = area;
-  pib1 = pib;
-  pontos1 = numberOfTuristcPoints;
-  densidade1 = popDensity;
-  pibPerCapita1 = pibPerCapita;
-  superPoder1 = cardPower;
+  unsigned int option;
+  printf("Escolha uma opção:\n");
+  printf("1 - Jogar\n");
+  printf("2 - Sair\n");
+  scanf("%u", &option);
 
-  // Coleta e armazena dados da segunda carta
-  getCardData();
-  pop2 = population;
-  area2 = area;
-  pib2 = pib;
-  pontos2 = numberOfTuristcPoints;
-  densidade2 = popDensity;
-  pibPerCapita2 = pibPerCapita;
-  superPoder2 = cardPower;
+  switch (option)
+  {
+    case 1:
+      getCardData();
+      pop1 = population;
+      area1 = area;
+      pib1 = pib;
+      pontos1 = numberOfTuristcPoints;
+      densidade1 = popDensity;
+      pibPerCapita1 = pibPerCapita;
+      superPoder1 = cardPower;
+
+      getCardData();
+      pop2 = population;
+      area2 = area;
+      pib2 = pib;
+      pontos2 = numberOfTuristcPoints;
+      densidade2 = popDensity;
+      pibPerCapita2 = pibPerCapita;
+      superPoder2 = cardPower;
+    break;
   
-  // Comparação entre as duas cartas em diferentes categorias
+  default:
+    break;
+  }
+
+ 
+  
   printf("Batalha entre as cartas:\n");
   printf("População: %s \n", (pop1 > pop2 ? "Carta 1" : "Carta 2"));
   printf("Área: %s \n", (area1 > area2 ? "Carta 1" : "Carta 2"));
