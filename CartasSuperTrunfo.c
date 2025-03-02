@@ -95,7 +95,7 @@ int main() {
 
   int cont = 0;
   int battle = 0;
-  int repeat = 0;
+
 
   switch (option)
   {
