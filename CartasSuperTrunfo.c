@@ -141,45 +141,45 @@ int main() {
       if (cont == 1) {
         int continueComparison = 1; // Controle do loop
         while (continueComparison == 1) { // Loop enquanto o usuário quiser comparar
-            printf("Selecione uma opção:\n");
-            printf("1 - População\n");
-            printf("2 - Área\n");
-            printf("3 - PIB\n");
-            printf("4 - Pontos turísticos\n");
-            printf("5 - Densidade populacional\n");
-            printf("6 - PIB per Capita\n");
-            printf("7 - Poder da carta\n");
-            scanf("%u", &battle); // Lê a opção DENTRO do loop
-    
-            switch (battle) {
-                case 1:
-                    printf("População: %s \n", (pop1 > pop2 ? "Carta 1 vence" : "Carta 2 vence"));
-                    break;
-                case 2:
-                    printf("Área: %s \n", (area1 > area2 ? "Carta 1 vence" : "Carta 2 vence"));
-                    break;
-                case 3:
-                    printf("PIB: %s \n", (pib1 > pib2 ? "Carta 1 vence" : "Carta 2 vence"));
-                    break;
-                case 4:
-                    printf("Pontos turísticos: %s \n", (pontos1 > pontos2 ? "Carta 1 vence" : "Carta 2 vence"));
-                    break;
-                case 5:
-                    printf("Densidade populacional: %s \n", (densidade1 > densidade2 ? "Carta 1 vence" : "Carta 2 vence"));
-                    break;
-                case 6:
-                    printf("PIB per capita: %s \n", (pibPerCapita1 > pibPerCapita2 ? "Carta 1 vence" : "Carta 2 vence"));
-                    break;
-                case 7:
-                    printf("Poder da carta: %s \n", (superPoder1 > superPoder2 ? "Carta 1 vence" : "Carta 2 vence"));
-                    break;
-                default:
-                    printf("Opção inválida!\n");
-            }
+          printf("Selecione uma opção:\n");
+          printf("1 - População\n");
+          printf("2 - Área\n");
+          printf("3 - PIB\n");
+          printf("4 - Pontos turísticos\n");
+          printf("5 - Densidade populacional\n");
+          printf("6 - PIB per Capita\n");
+          printf("7 - Poder da carta\n");
+          scanf("%u", &battle); 
+
+          switch (battle) {
+            case 1:
+              printf("População: %s \n", (pop1 > pop2 ? "Carta 1 vence" : "Carta 2 vence"));
+              break;
+            case 2:
+              printf("Área: %s \n", (area1 > area2 ? "Carta 1 vence" : "Carta 2 vence"));
+              break;
+            case 3:
+              printf("PIB: %s \n", (pib1 > pib2 ? "Carta 1 vence" : "Carta 2 vence"));
+              break;
+            case 4:
+              printf("Pontos turísticos: %s \n", (pontos1 > pontos2 ? "Carta 1 vence" : "Carta 2 vence"));
+              break;
+            case 5:
+              printf("Densidade populacional: %s \n", (densidade1 > densidade2 ? "Carta 1 vence" : "Carta 2 vence"));
+              break;
+            case 6:
+              printf("PIB per capita: %s \n", (pibPerCapita1 > pibPerCapita2 ? "Carta 1 vence" : "Carta 2 vence"));
+              break;
+            case 7:
+              printf("Poder da carta: %s \n", (superPoder1 > superPoder2 ? "Carta 1 vence" : "Carta 2 vence"));
+              break;
+            default:
+              printf("Opção inválida!\n");
+          }
     
             // Pergunta se deseja continuar
-            printf("Deseja comparar novamente? \n 1 - Sim\n 2 - Não\n");
-            scanf("%u", &continueComparison); // Atualiza a variável de controle
+          printf("Deseja comparar novamente? \n 1 - Sim\n 2 - Não\n");
+          scanf("%u", &continueComparison); // Atualiza a variável de controle
         }
     }
       printf("Deseja iniciar a batalha geral?\n 1 - Sim\n 2 - Não\n");
