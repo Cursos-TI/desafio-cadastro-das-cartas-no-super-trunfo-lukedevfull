@@ -43,14 +43,7 @@ void getCardData() {
   printf("Enter the number of tourist points in the city: \n");
   scanf("%d", &numberOfTuristcPoints);
   
-  cardPower = ((int)( 1 / popDensity) - 
-  ((int)(pibPerCapita +
-    numberOfTuristcPoints +
-    area +
-    pib +
-    population + 
-    numberOfTuristcPoints)
-  ));
+  cardPower = (1.0 / popDensity) + pibPerCapita + numberOfTuristcPoints;
 }
 
 void printCardData() {
@@ -64,9 +57,21 @@ void printCardData() {
   printf("PIB: %.2f\n", pib);
   printf("PIB per capita: $ %.2f\n", pibPerCapita);
   printf("Number of tourist points: %d\n", numberOfTuristcPoints);
-  printf("The card power is: %.2d\n", cardPower);
+  printf("The card power is: %.2f\n", cardPower); 
 }
 
+void printHowToPlay() {
+  printf("How to play:\n");
+  printf("1 - Enter the card id\n");
+  printf("2 - Enter the state\n");
+  printf("3 - Enter the card code\n");
+  printf("4 - Enter the city\n");
+  printf("5 - Enter the population\n");
+  printf("6 - Enter the area(KM)\n");
+  printf("7 - Enter the PIB\n");
+  printf("8 - Enter the number of tourist points in the city\n");
+  printf("9 - Enter the card power\n");
+}
 
 int main() {
   // Variáveis para a Carta 1
@@ -84,8 +89,11 @@ int main() {
   unsigned int option;
   printf("Escolha uma opção:\n");
   printf("1 - Jogar\n");
-  printf("2 - Sair\n");
+  printf("2 - Como Jogar\n");
+  printf("3 - Sair\n");
   scanf("%u", &option);
+
+  int cont = 0;
 
   switch (option)
   {
@@ -99,6 +107,15 @@ int main() {
       pibPerCapita1 = pibPerCapita;
       superPoder1 = cardPower;
 
+      printf("Deseja ver a carta cadastrada?\n 1 - Sim\n 2 - Não\n");
+      scanf("%u", &cont);
+
+      if (cont == 1) {
+        printCardData();
+      }
+
+      printf("Carta Rival:\n");
+
       getCardData();
       pop2 = population;
       area2 = area;
@@ -107,23 +124,43 @@ int main() {
       densidade2 = popDensity;
       pibPerCapita2 = pibPerCapita;
       superPoder2 = cardPower;
+
+      printf("Deseja ver a carta cadastrada?\n 1 - Sim\n 2 - Não\n");
+      scanf("%u", &cont);
+      
+      if (cont == 1) {
+        printCardData();
+      }
+
+      printf("Deseja iniciar a batalha?\n 1 - Sim\n 2 - Não\n");
+      scanf("%u", &cont);
+
+      if (cont == 1) {
+      printf("Batalha entre as cartas:\n");
+      printf("População: %s \n", (pop1 > pop2 ? "Carta 1" : "Carta 2"));
+      printf("Área: %s \n", (area1 > area2 ? "Carta 1" : "Carta 2"));
+      printf("PIB: %s \n", (pib1 > pib2 ? "Carta 1" : "Carta 2"));
+      printf("Pontos turísticos: %s \n", (pontos1 > pontos2 ? "Carta 1" : "Carta 2"));
+      printf("Densidade populacional: %s \n", (densidade1 > densidade2 ? "Carta 1" : "Carta 2"));
+      printf("PIB per capita: %s \n", (pibPerCapita1 > pibPerCapita2 ? "Carta 1" : "Carta 2"));
+      printf("Poder da carta: %s \n", (superPoder1 > superPoder2 ? "Carta 1" : "Carta 2"));
     break;
-  
+    } else {
+      printf("Batalha cancelada!\n");
+      break;
+    }
+
+    case 2:
+      printHowToPlay();
+    break;
+
+    case 3:
+      printf("Saindo...\n");
+    break;
   default:
+    printf("Opção inválida!\n");
     break;
   }
-
- 
-  
-  printf("Batalha entre as cartas:\n");
-  printf("População: %s \n", (pop1 > pop2 ? "Carta 1" : "Carta 2"));
-  printf("Área: %s \n", (area1 > area2 ? "Carta 1" : "Carta 2"));
-  printf("PIB: %s \n", (pib1 > pib2 ? "Carta 1" : "Carta 2"));
-  printf("Pontos turísticos: %s \n", (pontos1 > pontos2 ? "Carta 1" : "Carta 2"));
-  printf("Densidade populacional: %s \n", (densidade1 > densidade2 ? "Carta 1" : "Carta 2"));
-  printf("PIB per capita: %s \n", (pibPerCapita1 > pibPerCapita2 ? "Carta 1" : "Carta 2"));
-  printf("Poder da carta: %s \n", (superPoder1 > superPoder2 ? "Carta 1" : "Carta 2"));
-  
   return 0;
 }
 
